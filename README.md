@@ -15,7 +15,7 @@ This project showcases practical experience with:
 | **Network Configuration** | Static IP assignment, DNS configuration (loopback for DC vs. pointing to DC for clients), NAT networking in VirtualBox |
 | **File Sharing & Permissions** | SMB shares, NTFS permissions, disabling inheritance, group-based access control, network drive mapping |
 | **Group Policy (GPO)** | Creating and linking GPOs to OUs, user configuration (e.g., desktop wallpaper), computer configuration (account lockout), policy enforcement |
-| **PKI & Certificate Services** | AD Certificate Services, Certification Authority (CA) role, SHA-256 for secure authentication (LDAPS, Kerberos over TLS) |
+| **PKI & Certificate Services** | AD Certificate Services, Certification Authority (CA) role, SHA-256 for secure authentication |
 | **Help Desk / IT Support** | Account lockout recovery, password reset workflow, searching AD for users, unlock procedures |
 | **Windows Server Admin** | Server Manager, roles and features, promote to DC, best practices (e.g., avoid daily use of domain admin account) |
 | **Virtualization** | VirtualBox, VM snapshots, Guest Additions, NAT networks for lab isolation |
@@ -85,7 +85,7 @@ This lab walks through:
    - Complete the wizard and install (server will restart).
 
 ![Domain Controller](screenshots/Screenshot%202026-02-17%20211653.png)  
-![Forest Configuration](screenshots/Screenshot%202026-02-17%20211853.png)
+![Forest Configuration](screenshots/Screenshot%202026-02-17%212530.png)
 
 ---
 
@@ -200,18 +200,6 @@ Certificate Services enables secure authentication between clients and the domai
 
 <!-- ![Account Lockout Policy](screenshots/Screenshot%202026-02-20%20163545.png)   -->
 ![Password Reset](screenshots/Screenshot%202026-02-20%20163622.png)
-
----
-
-## Screenshots Reference
-
-Screenshots in the `screenshots/` folder document the lab steps above. They are organized by date and time of capture:
-
-| Date | Screenshots | Phase |
-|------|-------------|-------|
-| Feb 17 | `Screenshot 2026-02-17 181922.png` through `Screenshot 2026-02-17 214416.png` | Server setup, DC promotion, AD CS |
-| Feb 18 | `Screenshot 2026-02-18 090613.png` through `Screenshot 2026-02-18 092318.png` | OU and user management |
-| Feb 20 | `Screenshot 2026-02-20 130627.png` through `Screenshot 2026-02-20 164601.png` | Client join, shares, GPOs, lockout |
 
 ---
 
