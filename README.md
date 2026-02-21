@@ -166,7 +166,7 @@ Certificate Services enables secure authentication between clients and the domai
 5. Enter the UNC path to the wallpaper.
 6. Engineering users (e.g., Barney Stinson) receive the new wallpaper after policy refresh.
 
-![GPO Editor](screenshots/Screenshot%202026-02-20%20164249.png)  
+![GPO Editor](screenshots/Screenshot%202026-02-20%20142427.png)  
 ![Wallpaper Policy](screenshots/Screenshot%202026-02-20%20164439.png)
 
 ### Account Lockout GPO
@@ -197,7 +197,6 @@ Screenshots in the `screenshots/` folder document the lab steps above. They are 
 
 ## Notes
 
-- See **[Notes on Lab 2.md](Notes%20on%20Lab%202.md)** for the original step-by-step lab notes.
 - Domain admin should only be used when required; use delegated accounts for day-to-day tasks.
 - Lab uses `.local` and simple passwords for learning; production environments require proper domain names and stronger password policies.
 
