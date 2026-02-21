@@ -85,11 +85,14 @@ This lab walks through:
    - Complete the wizard and install (server will restart).
 
 ![Domain Controller](screenshots/Screenshot%202026-02-17%20212048.png)  
-![Forest Configuration](screenshots/Screenshot%202026-02-17%212530.png)
+![Forest Configuration](screenshots/Screenshot%202026-02-20%20221141.png)
 
 ---
 
 ## Part 3: Active Directory Certificate Services
+
+![AD CS Role Services](screenshots/Screenshot%202026-02-20%20221349.png)  
+![AD CS Installed](screenshots/Screenshot%202026-02-17%20214416.png)
 
 Certificate Services enables secure authentication between clients and the domain controller (e.g., LDAPS, Kerberos over TLS). The **Certification Authority (CA)** issues and manages digital certificates for domain members.
 
@@ -191,8 +194,8 @@ Certificate Services enables secure authentication between clients and the domai
 5. Enter the UNC path to the wallpaper.
 6. Engineering users (e.g., Barney Stinson) receive the new wallpaper after policy refresh.
 
-![GPO Editor](screenshots/Screenshot%202026-02-20%20145139.png)  
 ![Wallpaper Policy](screenshots/Screenshot%202026-02-20%20144543.png)
+![GPO Editor](screenshots/Screenshot%202026-02-20%20145139.png)  
 
 ### Account Lockout GPO
 
