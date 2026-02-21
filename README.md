@@ -2,6 +2,26 @@
 
 A hands-on lab for learning and practicing Microsoft Active Directory, including domain controller setup, user management, organizational units, group policies, and secure authentication. Built using Windows Server 2022 and Windows 11 Enterprise in VirtualBox.
 
+---
+
+## Skills & Competencies Demonstrated
+
+This project showcases practical experience with:
+
+| Area | What I Learned |
+|------|----------------|
+| **Active Directory** | Domain Controller promotion, forest and root domain creation, OU hierarchy design, AD Users and Computers |
+| **User & Identity Management** | Creating domain users, security groups, cross-OU group membership, naming conventions, password policy awareness |
+| **Network Configuration** | Static IP assignment, DNS configuration (loopback for DC vs. pointing to DC for clients), NAT networking in VirtualBox |
+| **File Sharing & Permissions** | SMB shares, NTFS permissions, disabling inheritance, group-based access control, network drive mapping |
+| **Group Policy (GPO)** | Creating and linking GPOs to OUs, user configuration (e.g., desktop wallpaper), computer configuration (account lockout), policy enforcement |
+| **PKI & Certificate Services** | AD Certificate Services, Certification Authority (CA) role, SHA-256 for secure authentication (LDAPS, Kerberos over TLS) |
+| **Help Desk / IT Support** | Account lockout recovery, password reset workflow, searching AD for users, unlock procedures |
+| **Windows Server Admin** | Server Manager, roles and features, promote to DC, best practices (e.g., avoid daily use of domain admin account) |
+| **Virtualization** | VirtualBox, VM snapshots, Guest Additions, NAT networks for lab isolation |
+
+---
+
 ## Overview
 
 This lab walks through:
@@ -192,6 +212,14 @@ Screenshots in the `screenshots/` folder document the lab steps above. They are 
 | Feb 17 | `Screenshot 2026-02-17 181922.png` through `Screenshot 2026-02-17 214416.png` | Server setup, DC promotion, AD CS |
 | Feb 18 | `Screenshot 2026-02-18 090613.png` through `Screenshot 2026-02-18 092318.png` | OU and user management |
 | Feb 20 | `Screenshot 2026-02-20 130627.png` through `Screenshot 2026-02-20 164601.png` | Client join, shares, GPOs, lockout |
+
+---
+
+## Key Takeaways
+
+- **Enterprise-ready skills:** This lab mirrors real-world tasks—domain joins, shared folder access, GPO deployment, and password reset tickets—common in help desk and junior sysadmin roles.
+- **Security awareness:** Understood why DCs need static IPs (consistent DNS/auth), why SHA-256 is used over SHA-1, and why domain admin should be used sparingly.
+- **Troubleshooting mindset:** Practiced account lockout recovery end-to-end (search user in AD → unlock → reset password with secure temp password), a typical IT support workflow.
 
 ---
 
