@@ -85,13 +85,13 @@ This lab walks through:
    - Complete the wizard and install (server will restart).
 
 ![Domain Controller](screenshots/Screenshot%202026-02-17%20212048.png)  
-![Forest Configuration](screenshots/Screenshot%202026-02-20%20221141.png)
+![Forest Configuration](screenshots/Screenshot%202026-02-17%20212530.png)
 
 ---
 
 ## Part 3: Active Directory Certificate Services
 
-![AD CS Role Services](screenshots/Screenshot%202026-02-20%20221349.png)  
+![AD CS Role Services](screenshots/Screenshot%202026-02-17%20214148.png)  
 ![AD CS Installed](screenshots/Screenshot%202026-02-17%20214416.png)
 
 Certificate Services enables secure authentication between clients and the domain controller (e.g., LDAPS, Kerberos over TLS). The **Certification Authority (CA)** issues and manages digital certificates for domain members.
