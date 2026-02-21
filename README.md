@@ -91,15 +91,15 @@ This lab walks through:
 
 ## Part 3: Active Directory Certificate Services
 
-![AD CS Role Services](screenshots/Screenshot%202026-02-17%20214148.png)  
-![AD CS Installed](screenshots/Screenshot%202026-02-17%20214416.png)
-
 Certificate Services enables secure authentication between clients and the domain controller (e.g., LDAPS, Kerberos over TLS). The **Certification Authority (CA)** issues and manages digital certificates for domain members.
 
 1. Add **Active Directory Certificate Services** via Add Roles and Features.
 2. Configure AD CS:
    - Select **Certification Authority**
    - Use **SHA-256** for certificate signing (industry standard, more secure than SHA-1).
+
+![AD CS Role Services](screenshots/Screenshot%202026-02-17%20214148.png)  
+![AD CS Installed](screenshots/Screenshot%202026-02-17%20214416.png)
 
 ---
 
@@ -176,9 +176,9 @@ Certificate Services enables secure authentication between clients and the domai
    - Allow only: SYSTEM, Administrators, Creator Owner, and **Engineeringshare** group (Read, Write, Execute)
 5. On the client, map the share in File Explorer (e.g., `\\DomainController\sharename`) or via **This PC** → Map network drive.
 6. Log in as Ted Mosby, create a file in the share; log in as Barney Stinson and confirm the file is visible.
-
-![Shared Folder](screenshots/Screenshot%202026-02-20%20142341.png)  
-![Share Permissions](screenshots/Screenshot%202026-02-20%20140635.png)  
+  
+![Share Permissions](screenshots/Screenshot%202026-02-20%20140635.png) 
+![Shared Folder](screenshots/Screenshot%202026-02-20%20142341.png) 
 ![Mapped Drive](screenshots/Screenshot%202026-02-20%20142427.png)
 
 ---
