@@ -151,7 +151,7 @@ Certificate Services enables secure authentication between clients and the domai
 
 ![Shared Folder](screenshots/Screenshot%202026-02-20%20134221.png)  
 ![Share Permissions](screenshots/Screenshot%202026-02-20%20134344.png)  
-![Mapped Drive](screenshots/Screenshot%202026-02-20%20135737.png)
+<!-- ![Mapped Drive](screenshots/Screenshot%202026-02-20%20135737.png) -->
 
 ---
 
@@ -178,7 +178,7 @@ Certificate Services enables secure authentication between clients and the domai
 5. Intentionally lock out an account (e.g., wrong password 3 times).
 6. Unlock and reset: **AD Users and Computers** → Search for user → Unlock account → Reset password with a secure temporary password.
 
-![Account Lockout Policy](screenshots/Screenshot%202026-02-20%20163545.png)  
+<!-- ![Account Lockout Policy](screenshots/Screenshot%202026-02-20%20163545.png)   -->
 ![Password Reset](screenshots/Screenshot%202026-02-20%20163622.png)
 
 ---
