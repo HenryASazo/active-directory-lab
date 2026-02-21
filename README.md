@@ -84,7 +84,7 @@ This lab walks through:
    - Root domain: `mylab.local`
    - Complete the wizard and install (server will restart).
 
-![Domain Controller](screenshots/Screenshot%202026-02-17%20211653.png)  
+![Domain Controller](screenshots/Screenshot%202026-02-17%20212048.png)  
 ![Forest Configuration](screenshots/Screenshot%202026-02-17%212530.png)
 
 ---
@@ -144,6 +144,10 @@ Certificate Services enables secure authentication between clients and the domai
 
 ![Network Settings](screenshots/Screenshot%202026-02-20%20130627.png)
 
+### Static IP on Domain Controller
+
+![DC Static IP](screenshots/Screenshot%202026-02-20%20131908.png)
+
 ### Join Domain
 
 1. On the client: **Settings** → **Access work or school** → **Connect**.
@@ -153,8 +157,9 @@ Certificate Services enables secure authentication between clients and the domai
 5. Log in as **Other user** using one of the domain accounts.
 6. Verify the client appears under `mylab.local` → Computers in AD Users and Computers.
 
-![Domain Join](screenshots/Screenshot%202026-02-20%20131908.png)  
-![Domain Login](screenshots/Screenshot%202026-02-20%20132257.png)
+![Domain Join](screenshots/Screenshot%202026-02-20%20134221.png)  
+![Domain Login](screenshots/Screenshot%202026-02-20%20134344.png)  
+![Client in AD](screenshots/Screenshot%202026-02-20%20134722.png)
 
 ---
 
@@ -169,9 +174,9 @@ Certificate Services enables secure authentication between clients and the domai
 5. On the client, map the share in File Explorer (e.g., `\\DomainController\sharename`) or via **This PC** → Map network drive.
 6. Log in as Ted Mosby, create a file in the share; log in as Barney Stinson and confirm the file is visible.
 
-![Shared Folder](screenshots/Screenshot%202026-02-20%20134221.png)  
-![Share Permissions](screenshots/Screenshot%202026-02-20%20134344.png)  
-<!-- ![Mapped Drive](screenshots/Screenshot%202026-02-20%20135737.png) -->
+![Shared Folder](screenshots/Screenshot%202026-02-20%20142341.png)  
+![Share Permissions](screenshots/Screenshot%202026-02-20%20140635.png)  
+![Mapped Drive](screenshots/Screenshot%202026-02-20%20142427.png)
 
 ---
 
@@ -186,8 +191,8 @@ Certificate Services enables secure authentication between clients and the domai
 5. Enter the UNC path to the wallpaper.
 6. Engineering users (e.g., Barney Stinson) receive the new wallpaper after policy refresh.
 
-![GPO Editor](screenshots/Screenshot%202026-02-20%20142427.png)  
-![Wallpaper Policy](screenshots/Screenshot%202026-02-20%20164439.png)
+![GPO Editor](screenshots/Screenshot%202026-02-20%20145139.png)  
+![Wallpaper Policy](screenshots/Screenshot%202026-02-20%20144543.png)
 
 ### Account Lockout GPO
 
@@ -198,8 +203,9 @@ Certificate Services enables secure authentication between clients and the domai
 5. Intentionally lock out an account (e.g., wrong password 3 times).
 6. Unlock and reset: **AD Users and Computers** → Search for user → Unlock account → Reset password with a secure temporary password.
 
-<!-- ![Account Lockout Policy](screenshots/Screenshot%202026-02-20%20163545.png)   -->
-![Password Reset](screenshots/Screenshot%202026-02-20%20163622.png)
+![Account Lockout Policy](screenshots/Screenshot%202026-02-20%20163622.png)  
+![Account Locked Out](screenshots/Screenshot%202026-02-20%20164439.png)  
+![Password Reset](screenshots/Screenshot%202026-02-20%20164601.png)
 
 ---
 
