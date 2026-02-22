@@ -2,6 +2,23 @@
 
 A hands-on lab I completed to learn and practice Microsoft Active Directory, including domain controller setup, user management, organizational units, group policies, and secure authentication. I built this using Windows Server 2022 and Windows 11 Enterprise in VirtualBox.
 
+## Table of Contents
+
+- [Skills & Competencies Demonstrated](#skills--competencies-demonstrated)
+- [Overview](#overview)
+- [Lab Environment](#lab-environment)
+- [Prerequisites](#prerequisites)
+- [Part 1: Windows Server 2022 Setup](#part-1-windows-server-2022-setup)
+- [Part 2: Domain Controller Promotion](#part-2-domain-controller-promotion)
+- [Part 3: Active Directory Certificate Services](#part-3-active-directory-certificate-services)
+- [Part 4: User & Organizational Unit Management](#part-4-user--organizational-unit-management)
+- [Part 5: Windows 11 Client & Network Setup](#part-5-windows-11-client--network-setup)
+- [Part 6: Shared Folders & Groups](#part-6-shared-folders--groups)
+- [Part 7: Group Policy Objects (GPO)](#part-7-group-policy-objects-gpo)
+- [What I Learned](#what-i-learned)
+- [Notes](#notes)
+- [License](#license)
+
 ---
 
 ## Skills & Competencies Demonstrated
