@@ -1,12 +1,12 @@
 # Active Directory Lab
 
-A hands-on lab for learning and practicing Microsoft Active Directory, including domain controller setup, user management, organizational units, group policies, and secure authentication. Built using Windows Server 2022 and Windows 11 Enterprise in VirtualBox.
+A hands-on lab I completed to learn and practice Microsoft Active Directory, including domain controller setup, user management, organizational units, group policies, and secure authentication. I built this using Windows Server 2022 and Windows 11 Enterprise in VirtualBox.
 
 ---
 
 ## Skills & Competencies Demonstrated
 
-This project showcases practical experience with:
+This project showcases practical experience I gained with:
 
 | Area | What I Learned |
 |------|----------------|
@@ -24,7 +24,7 @@ This project showcases practical experience with:
 
 ## Overview
 
-This lab walks through:
+Here’s what I did in this lab:
 
 - **Domain Controller (DC)** setup and promotion
 - **Active Directory Certificate Services** for secure client authentication
@@ -60,14 +60,14 @@ This lab walks through:
 
 ## Part 1: Windows Server 2022 Setup
 
-1. Download Windows Server 2022 (64-bit, English) from the Microsoft evaluation site.
-2. Create a new VM in VirtualBox:
+1. I downloaded Windows Server 2022 (64-bit, English) from the Microsoft evaluation site.
+2. I created a new VM in VirtualBox:
    - 8 GB RAM, 4 CPUs, 50 GB disk
    - Desktop Experience installation
    - Custom install on the virtual drive
-3. Set the administrator password (e.g., `Password!`).
-4. Install VirtualBox Guest Additions for better resolution and integration.
-5. Take a snapshot of the clean VM before further changes (Machine → Snapshot).
+3. I set the administrator password (e.g., `Password`).
+4. I installed VirtualBox Guest Additions for better resolution and integration.
+5. I took a snapshot of the clean VM before further changes (Machine → Snapshot).
 
 ![Server Setup](screenshots/Screenshot%202026-02-17%20181922.png)
 
@@ -75,14 +75,14 @@ This lab walks through:
 
 ## Part 2: Domain Controller Promotion
 
-1. Rename the VM to **DomainController**.
-2. Open **Server Manager** → Manage → **Add Roles and Features**.
-3. Select the DomainController server as the destination.
-4. Install **Active Directory Domain Services** (keep defaults).
-5. Promote the server to a domain controller:
-   - Choose **Add a new forest**
+1. I renamed the VM to **DomainController**.
+2. I opened **Server Manager** → Manage → **Add Roles and Features**.
+3. I selected the DomainController server as the destination.
+4. I installed **Active Directory Domain Services** (kept defaults).
+5. I promoted the server to a domain controller:
+   - I chose **Add a new forest**
    - Root domain: `mylab.local`
-   - Complete the wizard and install (server will restart).
+   - I completed the wizard and installed (server restarted).
 
 ![Domain Controller](screenshots/Screenshot%202026-02-17%20212048.png)  
 ![Forest Configuration](screenshots/Screenshot%202026-02-17%20212530.png)
@@ -93,10 +93,10 @@ This lab walks through:
 
 Certificate Services enables secure authentication between clients and the domain controller (e.g., LDAPS, Kerberos over TLS). The **Certification Authority (CA)** issues and manages digital certificates for domain members.
 
-1. Add **Active Directory Certificate Services** via Add Roles and Features.
-2. Configure AD CS:
-   - Select **Certification Authority**
-   - Use **SHA-256** for certificate signing (industry standard, more secure than SHA-1).
+1. I added **Active Directory Certificate Services** via Add Roles and Features.
+2. I configured AD CS:
+   - I selected **Certification Authority**
+   - I used **SHA-256** for certificate signing (industry standard, more secure than SHA-1).
 
 ![AD CS Role Services](screenshots/Screenshot%202026-02-17%20214148.png)  
 ![AD CS Installed](screenshots/Screenshot%202026-02-17%20214416.png)
@@ -105,11 +105,11 @@ Certificate Services enables secure authentication between clients and the domai
 
 ## Part 4: User & Organizational Unit Management
 
-1. **Server Manager** → Tools → **Active Directory Users and Computers**.
-2. View the directory structure under `mylab.local`.
-3. Create an OU named **Groups** (right-click `mylab.local` → New → Organizational Unit).
-4. Move security group objects into the Groups OU; leave only user accounts in Users.
-5. Create new users with a naming scheme (e.g., first initial + last name). For this lab, simple passwords and "never expire" were used; in production, enforce password complexity and "must change at next logon."
+1. I opened **Server Manager** → Tools → **Active Directory Users and Computers**.
+2. I viewed the directory structure under `mylab.local`.
+3. I created an OU named **Groups** (right-click `mylab.local` → New → Organizational Unit).
+4. I moved security group objects into the Groups OU and left only user accounts in Users.
+5. I created new users with a naming scheme (e.g., first initial + last name). For this lab, I used simple passwords and "never expire"; in production, I would enforce password complexity and "must change at next logon."
 
 ![AD Users and Computers](screenshots/Screenshot%202026-02-18%20090613.png)  
 ![OU Structure](screenshots/Screenshot%202026-02-18%20090853.png)
@@ -120,21 +120,21 @@ Certificate Services enables secure authentication between clients and the domai
 
 ### Client VM Setup
 
-- Install Windows 11 Enterprise and VirtualBox Guest Additions.
-- Use the same NAT network as the Domain Controller (see below).
+- I installed Windows 11 Enterprise and VirtualBox Guest Additions.
+- I used the same NAT network as the Domain Controller (see below).
 
 ### NAT Network (VirtualBox)
 
-1. **File** → **Host Network Manager** → **NAT Network** → Create.
-2. Name it **ActiveDirectory**.
-3. In both VM settings, set **Attached to: NAT Network** and select **ActiveDirectory**.
+1. I went to **File** → **Host Network Manager** → **NAT Network** → Create.
+2. I named it **ActiveDirectory**.
+3. In both VM settings, I set **Attached to: NAT Network** and selected **ActiveDirectory**.
 
 ### Static IP Configuration
 
 **Domain Controller (DC):**
 
-- Use a static IP so clients always know where to find DNS and authentication.
-- `ipconfig` to see the current address, then set:
+- I used a static IP so clients always know where to find DNS and authentication.
+- I ran `ipconfig` to see the current address, then set:
   - **IP:** `10.0.2.15`
   - **Subnet mask:** `255.255.255.0`
   - **Default gateway:** `10.0.2.1`
@@ -142,8 +142,8 @@ Certificate Services enables secure authentication between clients and the domai
 
 **Windows 11 Client:**
 
-- Use a sequential IP (e.g., `10.0.2.16`).
-- **DNS:** Use the DC’s IP (`10.0.2.15`), not loopback—the client must resolve names via the DC.
+- I used a sequential IP (e.g., `10.0.2.16`).
+- **DNS:** I set it to the DC’s IP (`10.0.2.15`), not loopback—the client must resolve names via the DC.
 
 ![Network Settings](screenshots/Screenshot%202026-02-20%20130627.png)
 
@@ -153,12 +153,12 @@ Certificate Services enables secure authentication between clients and the domai
 
 ### Join Domain
 
-1. On the client: **Settings** → **Access work or school** → **Connect**.
-2. Choose **Join this device to a local Active Directory domain**.
-3. Enter `mylab.local` and the DC administrator credentials.
-4. Restart when prompted.
-5. Log in as **Other user** using one of the domain accounts.
-6. Verify the client appears under `mylab.local` → Computers in AD Users and Computers.
+1. On the client, I went to **Settings** → **Access work or school** → **Connect**.
+2. I chose **Join this device to a local Active Directory domain**.
+3. I entered `mylab.local` and the DC administrator credentials.
+4. I restarted when prompted.
+5. I logged in as **Other user** using one of the domain accounts.
+6. I verified the client appears under `mylab.local` → Computers in AD Users and Computers.
 
 ![Domain Join](screenshots/Screenshot%202026-02-20%20134221.png)  
 ![Domain Login](screenshots/Screenshot%202026-02-20%20134344.png)  
@@ -168,14 +168,14 @@ Certificate Services enables secure authentication between clients and the domai
 
 ## Part 6: Shared Folders & Groups
 
-1. Create OUs: **Engineering**, **Marketing**, **Sales**.
-2. Inside Engineering, create group **Engineeringshare** and add Barney Stinson (Engineering) and Ted Mosby (Sales) to test cross-OU membership.
-3. Create a shared folder via **Server Manager** → File and Storage Services → Shares.
-4. Configure NTFS permissions:
-   - Disable inheritance
-   - Allow only: SYSTEM, Administrators, Creator Owner, and **Engineeringshare** group (Read, Write, Execute)
-5. On the client, map the share in File Explorer (e.g., `\\DomainController\sharename`) or via **This PC** → Map network drive.
-6. Log in as Ted Mosby, create a file in the share; log in as Barney Stinson and confirm the file is visible.
+1. I created OUs: **Engineering**, **Marketing**, **Sales**.
+2. Inside Engineering, I created group **Engineeringshare** and added Barney Stinson (Engineering) and Ted Mosby (Sales) to test cross-OU membership.
+3. I created a shared folder via **Server Manager** → File and Storage Services → Shares.
+4. I configured NTFS permissions:
+   - I disabled inheritance
+   - I allowed only: SYSTEM, Administrators, Creator Owner, and **Engineeringshare** group (Read, Write, Execute)
+5. On the client, I mapped the share in File Explorer (e.g., `\\DomainController\sharename`) or via **This PC** → Map network drive.
+6. I logged in as Ted Mosby, created a file in the share; then logged in as Barney Stinson and confirmed the file was visible.
   
 ![Share Permissions](screenshots/Screenshot%202026-02-20%20140635.png) 
 ![Shared Folder](screenshots/Screenshot%202026-02-20%20142341.png) 
@@ -187,24 +187,24 @@ Certificate Services enables secure authentication between clients and the domai
 
 ### Wallpaper GPO (Engineering OU)
 
-1. Create a custom wallpaper and copy it to **\\\\DomainController\\NETLOGON** (via Server Manager → File and Storage Services → Shares).
-2. **Server Manager** → Tools → **Group Policy Management**.
-3. Create a new GPO (e.g., **Engineering Wallpaper**) and link it to the Engineering OU.
-4. Edit the GPO: **User Configuration** → **Policies** → **Administrative Templates** → **Desktop** → **Desktop Wallpaper**.
-5. Enter the UNC path to the wallpaper.
-6. Engineering users (e.g., Barney Stinson) receive the new wallpaper after policy refresh.
+1. I created a custom wallpaper and copied it to **\\\\DomainController\\NETLOGON** (via Server Manager → File and Storage Services → Shares).
+2. I opened **Server Manager** → Tools → **Group Policy Management**.
+3. I created a new GPO (e.g., **Engineering Wallpaper**) and linked it to the Engineering OU.
+4. I edited the GPO: **User Configuration** → **Policies** → **Administrative Templates** → **Desktop** → **Desktop Wallpaper**.
+5. I entered the UNC path to the wallpaper.
+6. Engineering users (e.g., Barney Stinson) received the new wallpaper after policy refresh.
 
 ![Wallpaper Policy](screenshots/Screenshot%202026-02-20%20144543.png)
 ![GPO Editor](screenshots/Screenshot%202026-02-20%20145139.png)  
 
 ### Account Lockout GPO
 
-1. Create a GPO (e.g., **Account Lockout Policy**).
-2. Edit: **Computer Configuration** → **Policies** → **Windows Settings** → **Security Settings** → **Account Policies** → **Account Lockout Policy**.
-3. Set **Account lockout threshold** to 3 invalid attempts.
-4. Right-click the GPO and **Enforce** it.
-5. Intentionally lock out an account (e.g., wrong password 3 times).
-6. Unlock and reset: **AD Users and Computers** → Search for user → Unlock account → Reset password with a secure temporary password.
+1. I created a GPO (e.g., **Account Lockout Policy**).
+2. I edited it: **Computer Configuration** → **Policies** → **Windows Settings** → **Security Settings** → **Account Policies** → **Account Lockout Policy**.
+3. I set **Account lockout threshold** to 3 invalid attempts.
+4. I right-clicked the GPO and chose **Enforce**.
+5. I intentionally locked out an account (e.g., wrong password 3 times) to test the policy.
+6. I unlocked and reset: **AD Users and Computers** → Search for user → Unlock account → Reset password with a secure temporary password.
 
 ![Account Lockout Policy](screenshots/Screenshot%202026-02-20%20163622.png)  
 ![Account Locked Out](screenshots/Screenshot%202026-02-20%20164439.png)  
@@ -212,18 +212,28 @@ Certificate Services enables secure authentication between clients and the domai
 
 ---
 
-## Key Takeaways
+## What I Learned
 
-- **Enterprise-ready skills:** This lab mirrors real-world tasks—domain joins, shared folder access, GPO deployment, and password reset tickets—common in help desk and junior sysadmin roles.
-- **Security awareness:** Understood why DCs need static IPs (consistent DNS/auth), why SHA-256 is used over SHA-1, and why domain admin should be used sparingly.
-- **Troubleshooting mindset:** Practiced account lockout recovery end-to-end (search user in AD → unlock → reset password with secure temp password), a typical IT support workflow.
+Walking through this lab taught me several important concepts and workflows:
+
+**Active Directory and Domain Design** — I learned how a forest and root domain are created, why OUs matter for organizing users and computers, and how AD Users and Computers fits into day-to-day administration. The distinction between users, groups, and OUs became much clearer once I had to move objects and apply permissions.
+
+**Network and DNS** — The difference between DC and client DNS config was a big takeaway. The DC points DNS to itself (127.0.0.1) because it hosts DNS; clients must point to the DC’s IP so they can resolve domain names and reach authentication services. Static IPs on the DC are necessary so clients always know where to find it.
+
+**File Sharing and Permissions** — I got hands-on practice with NTFS permissions, inheritance, and group-based access. Disabling inheritance and explicitly assigning rights to a group (like Engineeringshare) reinforced how Windows combines share and NTFS permissions. Testing cross-OU group membership (Ted in Sales accessing an Engineering share) showed how groups can cross organizational boundaries.
+
+**Group Policy** — I saw how GPOs apply differently: user configuration (e.g., wallpaper) vs. computer configuration (account lockout). Using Enforce to prioritize a GPO and testing the lockout policy end-to-end helped me understand how policy flows down the OU hierarchy.
+
+**Security and Operations** — I learned why SHA-256 is preferred over SHA-1 for certificates, why domain admin accounts should be used sparingly, and how to handle a real help desk scenario: finding a user in AD, unlocking their account, and resetting their password with a secure temporary value.
+
+**Virtualization** — Using VirtualBox, NAT networks, and snapshots gave me a repeatable, isolated lab that mirrors how enterprises segment and test environments.
 
 ---
 
 ## Notes
 
 - Domain admin should only be used when required; use delegated accounts for day-to-day tasks.
-- Lab uses `.local` and simple passwords for learning; production environments require proper domain names and stronger password policies.
+- This lab uses `.local` and simple passwords for learning; production environments require proper domain names and stronger password policies.
 
 ---
 
